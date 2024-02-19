@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Observer } from "./homework/1";
+import RequestComponent from "./homework/2";
+import toast, { Toaster } from 'react-hot-toast';
+import { FormComponent } from "./homework/3";
+import { ComponentApp } from "./homework/4";
 
 function App() {
   return (
@@ -19,6 +24,15 @@ function App() {
           Learn React
         </a>
       </header>
+      <Observer onContentEndVisible={() => toast.success("Welcome to Ukraine!")}>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
+        <RequestComponent />
+        <FormComponent />
+        <ComponentApp />
+      </Observer>
     </div>
   );
 }
